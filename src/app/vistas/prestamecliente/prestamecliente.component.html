@@ -1,0 +1,61 @@
+<div style="padding-left:25px ;">
+    <div class="d-flex">
+        <div class="col-6" style="padding: 0;">
+            <div class="d-flex">
+                <div>
+                    <button mat-raised-button color="accent" type="button" (click)="openModal(null,1)">NUEVO</button>
+                    <!-- <button class="color-page-button" mat-fab style="opacity: 0.9; "> -->
+                    <!-- <i-feather name="plus"></i-feather> 
+                    </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <div class=table-responsive style="opacity: 0.9; border-radius: 15px; box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.35);">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">CÓDIGO</th>
+                    <th scope="col">DESCRIPCION</th>
+                    <th scope="col">PLAZO DESTINO</th>
+                    <th scope="col">FECHA INCIO</th>
+                    <th scope="col">FECHA FIN</th>
+                    <th scope="col">SOLICITUD</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let obj of lista">
+                    <td>{{obj.id}}</td>
+                    <td>{{obj.descripcion}}</td>
+                    <td>{{obj.plazo}}</td>
+                    <td>{{obj.inicio}}</td>
+                    <td>{{obj.fin}}</td>
+                    <td>{{obj.solicitud}}</td>
+                    <td>
+                        <button mat-raised-button color="accent" type="button" (click)="openModal(obj, 2)">EDITAR</button>
+                        <button mat-raised-button color="accent" type="button" (click)="eliminar(obj)">ELIMINAR</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <form class="example-container" [formGroup]="form" #frm="ngForm" (ngSubmit)="operar()">
+        <h1 mat-dialog-title>{{IU}} TIPO DE CAMBIO</h1>
+        <input type="text" class="form-control" formControlName="id">
+        <input type="text" class="form-control" formControlName="descripcion">
+        <input type="text" class="form-control" formControlName="plazo">
+        <input type="date" class="form-control" formControlName="inicio">
+        <input type="date" class="form-control" formControlName="fin">
+        <input type="text" class="form-control" formControlName="solicitud">
+        <div mat-dialog-actions style="float: right;">
+            <button mat-raised-button color="accent" type="button" (click)="cancelar()">CANCELAR</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="frm.invalid">ACEPTAR</button>
+        </div>
+    </form>
+
+</div>

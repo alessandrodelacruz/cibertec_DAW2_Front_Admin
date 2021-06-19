@@ -1,0 +1,52 @@
+<div class="row page-titles" style="background: transparent;">
+    <div class="col-md-12 align-self-center">
+        <ol class="breadcrumb" style="font-size: 21px;">
+            <li class="breadcrumb-item">
+                <a href="javascript:void(0)">SOLICITUD DE PRESTAMO</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<div *ngIf="visibletabla">
+    <div class="d-flex">
+        <div class="col-6" style="padding: 0;">
+            <div class="d-flex">
+                <div>
+                    <!-- <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModal(null, 1)">NUEVO</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <div class=table-responsive style="opacity: 0.9; border-radius: 15px; box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.35);">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">CÓDIGO</th>
+                    <th scope="col">MONEDA ORIGEN</th>
+                    <th scope="col">MONEDA DESTINO</th>
+                    <th scope="col">TIPO DE CAMBIO</th>
+                    <th scope="col">FECHA</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let obj of lista">
+                    <td>{{obj.id}}</td>
+                    <td>{{obj.idCliente}}</td>
+                    <td>{{obj.idPrestamo}}</td>
+                    <td>{{obj.fecha}}</td>
+                    <td>{{obj.nota}}</td>
+                    <td>{{obj.origen}}</td>
+                    <td>{{obj.estado}}</td>
+                    <td>
+                        <!-- <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModal(obj, 2)">EDITAR</button>
+                        <button mat-raised-button class="btn btn-success waves-effect waves-light btn-sm" type="button" (click)="eliminar(obj)">ELIMINAR</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

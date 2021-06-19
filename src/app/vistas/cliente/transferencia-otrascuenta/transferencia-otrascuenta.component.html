@@ -1,0 +1,58 @@
+<!-- <div class="col-9 mt-3 mb-3" style="border:2px solid #d6d6d6; border-radius: 15px; padding: 10px;flex: 0 0 48%; margin: 0 auto;"> -->
+<div class="modal-header">
+    <h5 mat-dialog-title>TRANSFERENCIA A OTRAS CUENTA</h5>
+</div>
+<form class="example-container" [formGroup]="form" #frm="ngForm" (ngSubmit)="continuar()">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <h5> Cuenta Origen :</h5>
+                    <div class="controls">
+                        <select class="form-control" formControlName="idcuentaorigen">
+                            <option [ngValue]="item" *ngFor="let item of listaCuentas">{{item.numero_cuenta}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <h5> Cuenta Destino :</h5>
+                    <div class="controls">
+                        <input type="number" class="form-control" formControlName="cuentadestino">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Moneda :</h5>
+                    <div class="controls">
+                        <select class="form-control" formControlName="idmoneda">
+                            <option [ngValue]="item" *ngFor="let item of listaMonedas">{{item.moneda}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Monto a Transferir :</h5>
+                    <div class="controls">
+                        <input type="number" class="form-control" formControlName="monto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="cancelar()">
+            <a>Cancelar</a> </button>
+        <button type="submit" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm" data-dismiss="modal">
+            <a>{{boton_primario}}</a></button>
+    </div>
+</form>
+<!-- </div> -->

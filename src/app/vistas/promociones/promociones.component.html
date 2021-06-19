@@ -1,0 +1,84 @@
+<div class="row page-titles" style="background: transparent;">
+    <div class="col-md-12 align-self-center">
+        <ol class="breadcrumb" style="font-size: 21px;">
+            <li class="breadcrumb-item">
+                <a href="javascript:void(0)">Mantenimiento de Promoción</a>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div *ngIf="visibletabla">
+    <div class="d-flex">
+        <div class="col-6" style="padding: 0;">
+            <div class="d-flex">
+                <div>
+                    <button mat-raised-button class="btn btn-info" type="button" (click)="openModal(null, 1)">NUEVO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <div class=table-responsive style="opacity: 0.9; border-radius: 15px; box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.35);">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Código</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let obj of lista">
+                    <td class="form-edit">{{obj.id}}</td>
+                    <td>{{obj.nombre}}</td>
+                    <td>
+                        <button mat-raised-button class="btn btn-success btn-icon btn-sm" type="button" (click)="openModal(obj, 2)">Editar</button>
+                        <button mat-raised-button class="btn btn-danger btn-icon btn-sm" type="button" (click)="eliminar(obj)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- <div *ngIf="visibleform" class="col-12" style="margin: 0;"> -->
+<div *ngIf="visibleform">
+    <div class="col-9 mt-3 mb-3" style="border:2px solid #d6d6d6; border-radius: 15px; padding: 10px;flex: 0 0 48%; margin: 0 auto;">
+
+        <form class="example-container" [formGroup]="form" #frm="ngForm" (ngSubmit)="operar()">
+            <h1 mat-dialog-title>{{IU}} PROMOCION</h1>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <h5> Codigo :</h5>
+                            <div class="controls">
+                                <input type="text" class="form-control" aria-invalid="false" formControlName="id">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <h5> Nombre :</h5>
+                            <div class="controls">
+                                <input type="text" class="form-control" formControlName="nombre">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="cancelar()">
+                        <a>Cancelar</a> </button>
+                <button type="submit" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm" data-dismiss="modal">
+                        <a>{{boton_primario}}</a></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- </div> -->

@@ -1,0 +1,65 @@
+<div class="modal-header">
+    <h5 mat-dialog-title>{{IU}} TIPO DE CAMBIO</h5>
+</div>
+<form class="example-container" [formGroup]="form" #frm="ngForm" (ngSubmit)="operar()">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Codigo :</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="id" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Tipo de cambio :</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="tipo_cambio" [disabled]="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Fecha :</h5>
+                    <div class="controls">
+                        <input type="date" class="form-control" formControlName="fecha">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Moneda origen :</h5>
+                    <div class="controls">
+                        <select class="form-control" formControlName="moneda_origen">
+                            <option [value]="item.id" *ngFor="let item of listaMonedas">{{item.moneda}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Moneda destino :</h5>
+                    <div class="controls">
+                        <select class="form-control" formControlName="moneda_destino">
+                            <option [value]="item.id" *ngFor="let item of listaMonedas">{{item.moneda}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="cancelar()">
+            <a>Cancelar</a> </button>
+        <button type="submit" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm" data-dismiss="modal">
+            <a>{{boton_primario}}</a></button>
+    </div>
+</form>

@@ -1,0 +1,63 @@
+<div class="d-flex">
+    <div class="col-6" style="padding: 0;">
+        <div class="d-flex">
+            <div>
+                <button mat-raised-button color="accent" type="button" (click)="openModal(null,1)">NUEVO</button>
+                <!-- <button class="color-page-button" mat-fab style="opacity: 0.9; "> -->
+                <!-- <i-feather name="plus"></i-feather> 
+                    </button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">CÓDIGO</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">TIPO DE CUENTA</th>
+            <th scope="col">FECHA NACIMIENTO</th>
+            <th scope="col">SEXO</th>
+            <th scope="col">DIRECCION</th>
+            <th scope="col">ESTADO</th>
+            <th scope="col">DISTRITO</th>
+            <th scope="col">ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let obj of lista">
+            <td>{{obj.id}}</td>
+            <td>{{obj.email}}</td>
+            <td>{{obj.tipo_de_cuenta}}</td>
+            <td>{{obj.fecha_nac}}</td>
+            <td>{{obj.sexo}}</td>
+            <td>{{obj.direccion}}</td>
+            <td>{{obj.estado}}</td>
+            <td>{{obj.id_distrito}}</td>
+            <td>
+                <button mat-raised-button color="accent" type="button" (click)="openModal(obj, 2)">EDITAR</button>
+                <button mat-raised-button color="accent" type="button" (click)="eliminar(obj)">ELIMINAR</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<form class="example-container" [formGroup]="form" #frmUsuario="ngForm" (ngSubmit)="operar()">
+    <h1 mat-dialog-title>{{IU}} USUARIO</h1>
+    <input type="text" class="form-control" formControlName="id">
+    <input type="text" class="form-control" formControlName="email">
+    <input type="text" class="form-control" formControlName="tipo_de_cuenta">
+    <input type="date" class="form-control" formControlName="fecha_nac">
+    <input type="text" class="form-control" formControlName="sexo">
+    <input type="text" class="form-control" formControlName="direccion">
+    <input type="text" class="form-control" formControlName="estado">
+    <input type="text" class="form-control" formControlName="id_distrito">
+
+    <div mat-dialog-actions style="float: right;">
+        <button mat-raised-button color="accent" type="button" (click)="cancelar()">CANCELAR</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="frmUsuario.invalid">ACEPTAR</button>
+    </div>
+</form>

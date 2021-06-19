@@ -1,0 +1,142 @@
+<div class="modal-body">
+
+    <div class="row">
+        <div class="col-6">
+            <label style="font-size: 35px;font-weight: bold;">Banca por Internet</label><br>
+            <label style="font-size: 35px;font-weight: bold;">Hola, {{'nombre'}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="col-12 mt-3 mb-3" style="border:2px solid #d6d6d6; border-radius: 15px; padding: 10px;flex: 0 0 48%; margin: 0 7px 0 0;">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label style="font-size: 25px;font-weight: bold;">Cuentas</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table">
+                            <thead class="thead-dark">
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let obj of listaCuentabancaria">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label style="font-size: 22px;">Ahorro Soles</label><br>
+                                                <label style="font-size: 22px;">{{obj.numero_cuenta}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                <label style="font-size: 22px;">{{obj.saldo}}</label><br>
+                                                <label style="font-size: 22px;">Saldo Disponible</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-group">
+                                                <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" style="padding: 10px; margin-bottom: 20px; 
+                                                margin-top: 15px;" (click)="openModals(obj)">
+                                                    Ver mas </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- <div class="col-7">
+                        <div class="form-group">
+                            <label style="font-size: 22px;">{{'objTransferencia}}</label><br>
+                            <label style="font-size: 22px;">{{'objTransferencia}}</label>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label style="font-size: 22px;">{{'objTransferencia}}</label><br>
+                            <label style="font-size: 22px;">Saldo Disponible</label>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="col-12 mt-3 mb-3" style="border:2px solid #d6d6d6; border-radius: 15px; padding: 10px;flex: 0 0 48%; margin: 0 7px 0 0;">
+
+                <ul class="nav nav-tabs customtab" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#transferencias" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span
+                                class="hidden-xs-down">Tansferencias</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#pagos" role="tab"><span
+                                class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">
+                                Pagos</span></a> </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane  p-20" id="transferencias" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" style="padding: 10px; margin-bottom: 20px;" (click)="null">Nueva
+                                                transferencia </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">CUENTA DESTINO</th>
+                                                    <th scope="col">MONTO</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let obj of listaTransferencias">
+                                                    <td>{{obj.idcuentadestino.numero_cuenta}}</td>
+                                                    <td>{{obj.monto | currency: obj.idmoneda?.simbolo}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane  p-20" id="pagos" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" style="padding: 10px; margin-bottom: 20px;" (click)="null">Nuevo Pago
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">SERVICIO</th>
+                                                    <th scope="col">MONTO</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let obj of null">
+                                                    <td>{{obj.id}}</td>
+                                                    <td>{{obj.monto | currency: obj.idmoneda?.simbolo}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

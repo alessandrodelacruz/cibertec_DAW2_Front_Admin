@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h5> TRANSFERENCIAS A TERCEROS</h5>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <h5 style="font-size: 14px; margin-bottom: 0px;"> Cuenta de origen</h5>
+                <!-- <h5 style="font-size: 18px; font-weight: bold;"> Cuenta</h5> -->
+                <label style="font-size: 18px; font-weight: bold; margin-bottom: 0px;">Cuenta</label><br>
+                <label style="font-size: 18px;">{{objTransferencia.idcuentaorigen.numero_cuenta}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <h5 style="font-size: 14px; margin-bottom: 0px;"> Monto</h5>
+                <label style="font-size: 26px; font-weight: bold; color: red;">{{objTransferencia.monto | currency :
+                    simbolo }}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <h5 style="font-size: 14px; margin-bottom: 0px;"> Cuenta de destino</h5>
+                <label style="font-size: 18px; font-weight: bold; margin-bottom: 0px;">{{objTransferencia.idcuentadestino.id_cliente}}</label><br>
+                <label style="font-size: 18px;">{{objTransferencia.idcuentadestino.numero_cuenta}}</label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-light waves-effect waves-light btn-sm" (click)="cancelar()">
+        <a>Cancelar</a> </button>
+    <button type="button" class="btn btn-success waves-effect waves-light btn-sm" (click)="guardarTransaccion()">
+        <a>Confirmar</a></button>
+</div>
