@@ -26,9 +26,10 @@ export class CuentausuarioService {
     return this.http.post<any>(url, obj);
   }
 
-  registrarCuentaUsuarioC(obj: any) {
+  registrarCuentaUsuarioC(objcu:any) {
+    
     let url = this.urlback + "cuentaUsuario/registrarC";
-    return this.http.post<any>(url, obj);
+    return this.http.post<any>(url, objcu);
   }
 
   actualizarCuentaUsuario(obj: any) {

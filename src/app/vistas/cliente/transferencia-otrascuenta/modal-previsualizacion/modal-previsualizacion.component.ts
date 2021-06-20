@@ -13,8 +13,6 @@ import swal from 'sweetalert';
 export class ModalPrevisualizacionComponent implements OnInit {
   
   @Input() obj;
-  // simbolo : String = '';
-  simbolo = '$';
   
   public objTransferencia: Transferencia = new Transferencia();
   constructor(
@@ -23,18 +21,19 @@ export class ModalPrevisualizacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.objTransferencia = this.obj;
+    console.log("objTransferencia", this.objTransferencia)
   }
 
-  guardarTransaccion(){        
+  guardarTransaccion(){
+    this.objTransferencia.id = null;
     this.transferenciaService.registrarTransferencia(this.objTransferencia).subscribe(resp => {
       swal('Transaccion correcta', 'Se inserto correctamente el tipo de cambio', 'success');
-      this.activeModal.close();
+      this.activeModal.close({ 'accion': 1 });
     })
   }
   
   cancelar() {
-    this.activeModal.close({ 'accion': 1 });
-    // $('a[data-toggle="tooltip"]').tooltip('hide');
+    this.activeModal.close({ 'accion': 0 });
   }
 
 }

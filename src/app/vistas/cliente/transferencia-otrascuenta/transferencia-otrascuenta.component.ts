@@ -8,6 +8,7 @@ import { Transferencia } from '../../../modelos/transferencia';
 import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalPrevisualizacionComponent } from './modal-previsualizacion/modal-previsualizacion.component';
 import swal from 'sweetalert';
+import { CuentaUsuario } from '../../../modelos/cuentausuario';
 
 @Component({
   selector: 'app-transferencia-otrascuenta',
@@ -24,16 +25,19 @@ export class TransferenciaOtrascuentaComponent implements OnInit {
     private fb: FormBuilder) { }
 
 
-  form: FormGroup = new FormGroup({});
+  constante_idcliente = 30001;
+  public form: FormGroup = new FormGroup({});
   public objCuentabancaria: Cuentabancaria = new Cuentabancaria();
+  public objCuentaUsuario: CuentaUsuario = new CuentaUsuario();
   public objTransferencia: Transferencia = new Transferencia();
   public listaMonedas: Moneda[] = [];
   public listaCuentas: Cuentabancaria[] = [];
   public IU: any;
   public boton_primario: any;
-  modalRef: NgbModalRef;
+  public modalRef: NgbModalRef;
 
   ngOnInit(): void {
+    this.objCuentaUsuario.id = this.constante_idcliente;
     this.iniciarModal();
     this.listarMonedas();
     this.listarCuentaBacarias();
@@ -58,18 +62,18 @@ export class TransferenciaOtrascuentaComponent implements OnInit {
 
   listarCuentaBacarias(): void {
     let obj = new Cuentabancaria;
-    obj.id_cliente = 30001;
+    obj.id_cliente = this.objCuentaUsuario;
     this.cuentaBancariaService.listarCuentaBancariaPorCliente(obj).subscribe(resp => {
       this.listaCuentas = resp;
     })
   }
 
-  continuar() {
+  abrirPrevisualizacionTrans() {
     let obj = new Cuentabancaria;
     obj.numero_cuenta = this.form.value['cuentadestino'];;
     this.cuentaBancariaService.retornaCuentaBancariaPorNumdeCuenta(obj).subscribe(resp => {
-
       if (resp != null) {
+        debugger
         this.objCuentabancaria = resp;
         let obj = new Transferencia();
         obj.id = 0;
@@ -77,12 +81,19 @@ export class TransferenciaOtrascuentaComponent implements OnInit {
         obj.monto = this.form.value['monto'];
         obj.idmoneda = this.form.value['idmoneda'];
         obj.idcuentadestino = this.objCuentabancaria;
+
         this.modalRef = this.modalService.open(ModalPrevisualizacionComponent, { size: 'md' });
         this.modalRef.componentInstance.obj = obj;
         this.modalRef.result.then((result) => {
-          // this.listar();      
+          debugger
+          if(result.accion == 0){ 
+
+          }else{
+            this.activeModal.close({ 'accion': 1 });
+          }
         }, (reason) => {
         });
+
       } else {
         swal('Error', 'No existe la cuenta de destino.', 'warning');
       }
@@ -92,7 +103,6 @@ export class TransferenciaOtrascuentaComponent implements OnInit {
 
   cancelar() {
     this.activeModal.close({ 'accion': 1 });
-    // $('a[data-toggle="tooltip"]').tooltip('hide');
   }
 
 }
