@@ -67,7 +67,8 @@ export class AbrirCuentaDigitalComponent implements OnInit {
       obj.documento = this.form.value['documento'];
       
       if (obj.id == undefined) {
-        this.cuentausuarioService.registrarCuentaUsuario(obj).subscribe(resp => {
+        this.cuentausuarioService.registrarCuentaUsuarioC(obj).subscribe(resp => {
+          debugger
         })
       }
 

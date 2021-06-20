@@ -7,18 +7,18 @@
         color: black;
         font-size: 15px;
     }
-
+    
     h2 {
         color: black;
         font-style: italic;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-
-    .modal-body{
+    
+    .modal-body {
         text-align: center;
     }
     
-    .modal-content{
+    .modal-content {
         text-align: center;
         height: 400px;
         border-radius: 15px;
@@ -30,7 +30,7 @@
     <div class="modal-header">
         <img src="../../../assets/img/advertencia.png" width="30px">
         <h5 class="modal-title">¡Advertencia!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cancelar()"></button>
     </div>
     <div class="modal-body">
         <b>

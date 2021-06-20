@@ -6,6 +6,7 @@ import { CuentabancariaService } from '../../../servicios/cuentabancaria.service
 import { CuentaUsuario } from '../../../modelos/cuentausuario';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TransferenciaOtrascuentaComponent } from '../transferencia-otrascuenta/transferencia-otrascuenta.component';
+import { ModalComponent } from '../../../tipotransferencia/modal/modal.component';
 
 @Component({
   selector: 'app-cuenta-digital-inicio',
@@ -45,21 +46,20 @@ export class CuentaDigitalInicioComponent implements OnInit {
     obj.id_cliente = this.constante_idcliente;
     this.cuentabancariaService.listarCuentaBancariaPorCliente(obj).subscribe(resp => {
       this.listaCuentabancaria = resp;
+      console.log("a listaCuentabancaria", this.listaCuentabancaria)
     })
+  }
+
+  openModalMantenimientp() {
+    this.modalRef = this.modalService.open(ModalComponent, { size: 'lg' });
+    this.modalRef.result.then((result) => {   
+    }, (reason) => {
+    });
   }
 
 
   
 
-  openModals(event: any) {
-    this.modalRef = this.modalService.open(TransferenciaOtrascuentaComponent, { size: 'md' });
-    this.modalRef.componentInstance.obj = event;
-    this.modalRef.componentInstance.accionmodal = event;
-    this.modalRef.result.then((result) => {
 
-    }, (reason) => {
-      
-    });
-  }
 
 }

@@ -1,21 +1,23 @@
 <style>
-    h3,h5,.card-text{
+    h3,
+    h5,
+    .card-text {
         text-align: center;
         font-style: italic;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-
-    .card-body{
+    
+    .card-body {
         border-radius: 15px;
     }
-
-    .col-sm-6{
-      padding: 10px;
+    
+    .col-sm-6 {
+        padding: 10px;
     }
-    a{
-      color: white;
+    
+    a {
+        color: white;
     }
-
 </style>
 
 <!-- CSS only -->
@@ -28,66 +30,67 @@
 
 <div class="row">
     <div class="col-sm-6">
-      <div class="card" style="height: 208px;">
-        <div class="card-body" style="box-shadow: 3px 3px 5px 3px #999;">
-            <div class="d-flex flex-row justify-content-around mt-2">
-            <img src="../../../assets/img/Entre_mis_propias_cuentas.png">
+        <div class="card" style="height: 208px;">
+            <div class="card-body" style="box-shadow: 3px 3px 5px 3px #999;">
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <img src="../../../assets/img/Entre_mis_propias_cuentas.png">
+                </div>
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <b><p class="card-text">Transferencia entre mis cuentas BCB</p></b>
+                </div>
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <a type="button" class="btn btn-primary" (click)="openModalMantenimientp()">Seleccionar</a>
+
+                </div>
             </div>
-            <div class="d-flex flex-row justify-content-around mt-2">
-            <b><p class="card-text">Entre Mis Propias Cuentas BCB</p></b>
-            </div>
-            <div class="d-flex flex-row justify-content-around mt-2">
-          <a type="button" class="btn btn-primary" routerLink="/transferenciaOtrascuenta">Seleccionar</a>
         </div>
-        </div>
-      </div>
     </div>
 
     <div class="col-sm-6">
         <div class="card" style="height: 208px;">
-          <div class="card-body" style="box-shadow: 3px 3px 5px 3px #999;">
-              <div class="d-flex flex-row justify-content-around mt-2">
-                <img src="../../../assets/img/a_otras_cuentas.png">
-              </div>
-              <div class="d-flex flex-row justify-content-around mt-2">
-                <b><p class="card-text">A otras cuentas BCB</p></b>
-              </div>
-              <div class="d-flex flex-row justify-content-around mt-2">
-            <a href="#" class="btn btn-primary" (click)="openModals()">Seleccionar</a>
-          </div>
-          </div>
+            <div class="card-body" style="box-shadow: 3px 3px 5px 3px #999;">
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <img src="../../../assets/img/a_otras_cuentas.png">
+                </div>
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <b><p class="card-text">Transferencia a terceros BCB</p></b>
+                </div>
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <a class="btn btn-primary" (click)="openModaltrans()">Seleccionar</a>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="col-sm-6">
+    <div class="col-sm-6">
         <div class="card" style="height: 221px;">
-          <div class="card-body" style="box-shadow: 3px 3px 5px 3px #999;">
-              <div class="d-flex flex-row justify-content-around mt-2">
-                <img src="../../../assets/img/a_cuentas_de_otros_bancos.png">
-              </div>
-              <div class="d-flex flex-row justify-content-around mt-2">
-                <b><p class="card-text">A cuentas de otros Bancos</p></b>
-              </div>
-              <div class="d-flex flex-row justify-content-around mt-2">
-            <a href="#" class="btn btn-primary" (click)="openModals()">Seleccionar</a>
-          </div>
-          </div>
+            <div class="card-body" style="box-shadow: 3px 3px 5px 3px #999;">
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <img src="../../../assets/img/a_cuentas_de_otros_bancos.png">
+                </div>
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <b><p class="card-text">Transferencia a otros bancos</p></b>
+                </div>
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <a class="btn btn-primary" (click)="openModalMantenimientp()">Seleccionar</a>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-    
-      <div class="col-sm-6">
+
+    <div class="col-sm-6">
         <div class="card" style="height: 221px;">
-          <div class="card-body" style="box-shadow: 3px 3px 5px 3px #999;">
-              <div class="d-flex flex-row justify-content-around mt-2">
-                <img src="../../../assets/img/al_exterior.png">
-              </div>
-              <div class="d-flex flex-row justify-content-around mt-2">
-                <b><p class="card-text">Al Exterior</p></b>
-              </div>
-              <div class="d-flex flex-row justify-content-around mt-2">
-            <a href="#" class="btn btn-primary" (click)="openModals()">Seleccionar</a>
-          </div>
-          </div>
+            <div class="card-body" style="box-shadow: 3px 3px 5px 3px #999;">
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <img src="../../../assets/img/al_exterior.png">
+                </div>
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <b><p class="card-text">Al Exterior</p></b>
+                </div>
+                <div class="d-flex flex-row justify-content-around mt-2">
+                    <a class="btn btn-primary" (click)="openModalMantenimientp()">Seleccionar</a>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
