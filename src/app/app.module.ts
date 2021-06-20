@@ -66,5 +66,5 @@ import { ModalCuentausuarioComponent } from './vistas/cuentausuario/modal-cuenta
 })
 export class AppModule { }
 
-//hola borrar esta linea
+
 
