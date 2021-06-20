@@ -24,6 +24,7 @@ import { TipotransferenciaComponent } from './tipotransferencia/tipotransferenci
 import { ModalComponent } from './tipotransferencia/modal/modal.component';
 import { AbrirCuentaDigitalComponent } from './vistas/cliente/abrir-cuenta-digital/abrir-cuenta-digital.component';
 import { ModalCuentausuarioComponent } from './vistas/cuentausuario/modal-cuentausuario/modal-cuentausuario.component';
+import { LoginComponent } from './vistas/cliente/login/login.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ModalCuentausuarioComponent } from './vistas/cuentausuario/modal-cuenta
     TipotransferenciaComponent,
     ModalComponent,
     AbrirCuentaDigitalComponent,
-    ModalCuentausuarioComponent
+    ModalCuentausuarioComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,

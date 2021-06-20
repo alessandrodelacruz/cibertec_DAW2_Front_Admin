@@ -11,6 +11,7 @@ import { TransferenciaOtrascuentaComponent } from './vistas/cliente/transferenci
 import { TipotransferenciaComponent } from './tipotransferencia/tipotransferencia.component';
 import { AbrirCuentaDigitalComponent } from './vistas/cliente/abrir-cuenta-digital/abrir-cuenta-digital.component';
 import { CuentaDigitalInicioComponent } from './vistas/cliente/cuenta-digital-inicio/cuenta-digital-inicio.component';
+import { LoginComponent } from './vistas/cliente/login/login.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'laboratorio',pathMatch:'full'},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'tipodetransferencia',component:TipotransferenciaComponent},	
   {path:'abrirCuentaDigitalComponent',component:AbrirCuentaDigitalComponent},
   {path:'cuentaDigitalInicioComponent',component:CuentaDigitalInicioComponent},
+  {path:'login',component:LoginComponent}
 
 ];
 
