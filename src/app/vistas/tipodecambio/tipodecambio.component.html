@@ -1,9 +1,11 @@
-<div style="padding-left:25px ;">
+<br>
+<br>
+<div>
     <div class="row page-titles" style="background: transparent;">
         <div class="col-md-12 align-self-center">
             <ol class="breadcrumb" style="font-size: 21px;">
                 <li class="breadcrumb-item">
-                    <a href="javascript:void(0)">TIPO DE CAMBIO</a>
+                    <a href="javascript:void(0)">Tipo de Cambio</a>
                 </li>
             </ol>
         </div>
@@ -14,12 +16,12 @@
             <div class="col-3" style="padding: 0;">
                 <div>
                     <h5> </h5>
-                    <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModals(null, 1)">NUEVO</button>
+                    <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModals(null, 1)">Nuevo Tipo</button>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-2" style="display: inline-block;">
                 <div>
-                    <h5> Moneda Origen</h5>
+                    <h5 style="display: inline-block;"> Moneda Origen</h5>
                     <select class="form-control" name="monedaorigen" [(ngModel)]="opcmoneda" (change)='listarFiltro(opcmoneda)'>
                         <option [ngValue]="item" *ngFor="let item of listaMonedas">{{item.moneda}}
                         </option>

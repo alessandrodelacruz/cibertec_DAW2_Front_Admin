@@ -1021,6 +1021,7 @@ ul.list-style-none li a:hover {
 
 .single-column .page-wrapper {
     margin-left: 0px;
+    height: auto;
 }
 
 .fix-width {

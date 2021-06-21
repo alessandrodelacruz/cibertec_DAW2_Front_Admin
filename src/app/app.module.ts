@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TipodecambioComponent } from './vistas/tipodecambio/tipodecambio.component';
@@ -55,7 +54,6 @@ import { LoginComponent } from './vistas/cliente/login/login.component';
   ],
   imports: [
     AppRoutingModule,
-    
     BrowserModule,    
     HttpClientModule,
     FormsModule,

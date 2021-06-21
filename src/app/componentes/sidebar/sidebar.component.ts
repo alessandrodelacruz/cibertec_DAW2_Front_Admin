@@ -32,10 +32,10 @@ export class SidebarComponent implements OnInit {
     //     }
     //   }
     // });
-    this.objCuentaUsuario = JSON.parse(localStorage.getItem('usuario'));
-    if (this.objCuentaUsuario != null) {
-      this.usu_logueado = true;
-    }
+    // this.objCuentaUsuario = JSON.parse(localStorage.getItem('usuario'));
+    // if (this.objCuentaUsuario != null) {
+    //   this.usu_logueado = true;
+    // }
   }
 
 }

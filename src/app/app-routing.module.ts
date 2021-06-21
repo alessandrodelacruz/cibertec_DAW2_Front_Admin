@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'tipodecambio',component:TipodecambioComponent},
   {path:'cuentausuario',component:CuentausuarioComponent},
   {path:'promociones',component:PromocionesComponent},
-  {path:'prestamecliente',component:PrestameclienteComponent},
+  {path:'prestamocliente',component:PrestameclienteComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'solicitudprestamo',component:SolicitudprestamoComponent},
   {path:'transferenciaOtrascuenta',component:TransferenciaOtrascuentaComponent},

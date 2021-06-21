@@ -1,6 +1,5 @@
-<!-- <div class="col-9 mt-3 mb-3" style="border:2px solid #d6d6d6; border-radius: 15px; padding: 10px;flex: 0 0 48%; margin: 0 auto;"> -->
 <div class="modal-header">
-    <h5 mat-dialog-title>TRANSFERENCIA A TERCEROS</h5>
+    <h5 mat-dialog-title>TRANSFERENCIA A TERCEROS </h5>
 </div>
 <form class="example-container" [formGroup]="form" #frm="ngForm" (ngSubmit)="abrirPrevisualizacionTrans()">
     <div class="modal-body">
@@ -48,10 +47,10 @@
         </div>
     </div>
 
-    <div class="modal-footer">
-        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="cancelar()">
+    <div class="modal-footer" style="background:transparent;">
+        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="cancelar()" style="width: 100px;height: 50px;">
             <a>Cancelar</a> </button>
-        <button type="submit" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm" data-dismiss="modal">
+        <button type="submit" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm" data-dismiss="modal" style="width: 100px;height: 50px;">
             <a>{{boton_primario}}</a></button>
     </div>
 </form>
