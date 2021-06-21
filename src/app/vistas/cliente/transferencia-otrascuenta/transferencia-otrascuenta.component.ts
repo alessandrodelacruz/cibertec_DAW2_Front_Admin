@@ -24,8 +24,6 @@ export class TransferenciaOtrascuentaComponent implements OnInit {
     private cuentaBancariaService: CuentabancariaService,
     private fb: FormBuilder) { }
 
-
-  constante_idcliente = 30001;
   public form: FormGroup = new FormGroup({});
   public objCuentabancaria: Cuentabancaria = new Cuentabancaria();
   public objCuentaUsuario: CuentaUsuario = new CuentaUsuario();
@@ -37,7 +35,7 @@ export class TransferenciaOtrascuentaComponent implements OnInit {
   public modalRef: NgbModalRef;
 
   ngOnInit(): void {
-    this.objCuentaUsuario.id = this.constante_idcliente;
+    this.objCuentaUsuario = JSON.parse(localStorage.getItem('usuario'));
     this.iniciarModal();
     this.listarMonedas();
     this.listarCuentaBacarias();

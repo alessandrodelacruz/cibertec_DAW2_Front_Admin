@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CuentausuarioService } from '../../../servicios/cuentausuario.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { CuentaUsuario } from 'src/app/modelos/cuentausuario';
+import { CuentaUsuario } from '../../../modelos/cuentausuario';
 import { Router } from '@angular/router';
+
+// import { BasketWrapperService } from 'src/app/app.component';
+// import { SidebarComponent } from '../../../componentes/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +14,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-// cuentaUsuarioForm:FormGroup=new FormGroup({});
-public cuentaUsuarioForm: FormGroup; // formulario en blanco
-// public form: FormGroup;
-  constructor(private cuentausuarioService: CuentausuarioService, 
+  public cuentaUsuarioForm: FormGroup; // formulario en blanco
+
+  constructor(
+    private cuentausuarioService: CuentausuarioService,
+    // private sidebar: SidebarComponent, 
+    // private basketService: BasketWrapperService,
     public router: Router,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.setear();
@@ -26,24 +31,27 @@ public cuentaUsuarioForm: FormGroup; // formulario en blanco
     });
   }
 
-  
 
-  setear(){
-    localStorage.setItem('usuario',"aprendiendo usar storage");
+
+  setear() {
+    localStorage.setItem('usuario', "aprendiendo usar storage");
   }
-  
-  
-  verificarLogin(): void {
 
+
+  verificarLogin(): void {
     let obj = new CuentaUsuario();
     obj.numerotarjeta = this.cuentaUsuarioForm.value['numerotarjeta'];
     obj.clave = this.cuentaUsuarioForm.value['clave'];
     this.cuentausuarioService.verificarUsuario(obj).subscribe(resp => {
-      console.log("login",resp); 
-      localStorage.setItem('usuario', JSON.stringify(resp)); 
+      console.log("login", resp);
+      localStorage.setItem('usuario', JSON.stringify(resp));
       this.router.navigate(['/cuentaDigitalInicioComponent']);
-      
+      this.callMe();
     })
+  }
+
+  public callMe(): void {
+    // this.sidebar.ngOnInit();
   }
 
 }
