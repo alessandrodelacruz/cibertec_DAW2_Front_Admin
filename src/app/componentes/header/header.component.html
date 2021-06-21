@@ -1,17 +1,10 @@
-<header class="topbar">
+<header class="topbar" style="background-color: cornflowerblue;padding: 10px;">
     <nav class="navbar top-navbar navbar-expand-lg navbar-light">
-        <!-- ============================================================== -->
-        <!-- Logo -->
-
-        <!-- ============================================================== -->
         <div class="navbar-header">
             <ul class="navbar-nav mr-auto fadeInRight">
                 <!-- This is  -->
                 <li class="nav-item ">
-                    <a class="nav-link waves-effect waves-dark">
-                        <!-- <i-feather name="sidebar" class="large right-side-toggle"></i-feather> -->
-                        <!-- <i class="mdi mdi-apps large right-side-toggle "></i> -->
-                    </a>
+                    <a class="nav-link waves-effect waves-dark"></a>
                 </li>
 
                 <li class="nav-item">
@@ -20,161 +13,66 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link sidebartoggler hidden-sm-down " href="javascript:void(0)" style="padding: 0px 15px;">
-                        <!-- <i-feather name="menu" style="margin-top: 12px;"></i-feather> -->
-                    </a>
+                    <a class="nav-link sidebartoggler hidden-sm-down " href="javascript:void(0)" style="padding: 0px 15px;"></a>
                 </li>
                 <li class="nav-item hidden-sm-down"></li>
             </ul>
         </div>
-        <!-- ============================================================== -->
-        <!-- End Logo -->
-        <!-- ============================================================== -->
+
         <div class="navbar-collapse">
-
-
-            <!-- ============================================================== -->
-            <!-- toggle and nav items -->
-            <!-- ============================================================== -->
             <ul class="navbar-nav mr-auto fadeInRight hhe">
                 <!-- This is  -->
-                <li class="nav-item dropdown " style="left: 50px; text-transform: uppercase; font-weight: normal;">
-                    <a class="nav-link dropdown-toggle">
-                        CIBERBANCO
-                    </a>
+                <li>
+                    <img src="assets/img/loguito.png" style="margin-left: 45px;">
+                </li>
+                <li class="nav-item dropdown" style="text-transform: uppercase;margin-top: 10px;">
+                    <b><a class="nav-link dropdown-toggle" style="font-size: 18px;">Banco CiberBoot</a></b>
                 </li>
             </ul>
 
-
-
-            <!-- ============================================================== -->
-            <!-- User profile and search -->
-            <!-- ============================================================== -->
-            <ul class="navbar-nav my-lg-0">
-                <!-- ============================================================== -->
-                <!-- Search -->
-                <!-- ============================================================== -->
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark" style="font-weight: normal; text-transform: uppercase;">
-            ADMINISTRADOR
-          </a>
-                </li>
-
-
-
-
-                <!-- ============================================================== -->
-                <!-- Messages -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- End Messages -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- mega menu -->
-                <!-- ============================================================== -->
-
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-dark" style="padding: 0px 15px;">
-                        <!-- <i-feather name="home" (click)="ModuloHome()" style="margin-top: 12px;"></i-feather> -->
-                        <!-- <i class="icon icon-home" (click)="ModuloHome()"></i> -->
-                    </a>
-                </li>
-
-                <li class="nav-item ">
-                    <a class="nav-link waves-effect waves-dark" style="padding: 0px 15px;">
-                        <!-- <i-feather name="settings" class="right-side-toggleconf" style="margin-top: 12px;"></i-feather> -->
-                        <!-- <i class="icon icon-settings right-side-toggleconf "></i> -->
-                    </a>
-                </li>
-                <!-- ============================================================== -->
-                <!-- End mega menu -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Language -->
-                <!-- ============================================================== -->
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-us"></i></a>
-                    <div class="dropdown-menu dropdown-menu-right animated bounceInDown"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a>                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
-                </li> -->
-                <!-- ============================================================== -->
-                <!-- Profile -->
-                <!-- ============================================================== -->
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle hidden-sm-down waves-effect waves-dark " href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img [src]="empresa.logo | imagen:'usuario':empresa.idempresa" alt="user" class="profile-pic" />
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right animated fadeIn" style="padding: 0; margin: 10px 0px !important; border-radius: 10px !important; box-shadow: 0 0 25px #868686;">
-                        <ul class="dropdown-user ">
-                            <li>
-                                <div class="dw-user-box" style="padding: 20px; background: #000000a8; border-radius: 9px 9px 0 0;">
-                                    <div class="u-img">
-                                        <img [src]="empresa.logo | imagen:'usuario':empresa.idempresa" alt="i" style="color: transparent;">
-                                    </div>
-                                    <div class="u-text">
-                                        <h4 style="color: #ffffff; font-weight: 500;"> {{ empresa.razonsocial| truncate:[20, '...'] }}</h4>
-                                        <p style="color: #ffffff; font-weight: 500;">{{ empresa.ruc }}</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li role="separator" class="divider" style="margin: 0;"></li>
-                            <li>
-                                <a routerLink="/perfil" class="pointer datemp" style="display: flex; justify-content: space-between; padding: 15px 15px;">
-                                    <span style="display: flex;"> 
-                                        <i class="fa fa-address-book-o" aria-hidden="true" style="font-size: 25px; margin: auto; margin-right: 12px; color: #5dca97; filter: drop-shadow(0px 0px 2px #5dca97);"></i>
-                                        <span style="display: grid;">
-                                            Mis Datos
-                                            <small style="margin-top: 7px;">Datos de la Empresa</small>
-                                        </span>
-                                    </span>
-                                    <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px; color: #bfbfbf; margin: auto 0px;"></i>
-                                </a>
-                            </li>
-                            <li role="separator" class="divider" style="margin: 0;"></li>
-
-                            <h5 style="margin: 10px; margin-bottom: 5px; font-size: 13px; font-weight: 500;">Mis Empresas</h5>
-                            <li *ngFor="let emp of lsEmpresas">
-                                <a (click)="cambiaEmpresa(emp)" routerLink="/perfil" class="pointer datemp" style="display: flex; justify-content: space-between; padding: 15px 15px;">
-                                    <span style="display: flex;"> 
-                                        <img [src]="emp.logo | imagen:'usuario':emp.idempresa" alt="i" class="img-circle" style="color: transparent; margin: auto; margin-right: 12px;">
-                                        <span style="display: grid;">
-                                            {{emp.razonsocial|truncate:[25, '...']}} 
-                                            <small style="margin-top: 7px;">{{emp.ruc}}</small>
-                                        </span>
-                                    </span>
-                                    <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px; color: #bfbfbf; margin: auto 0px;"></i>
-                                </a>
-                            </li>
-
-                            <li role="separator" class="divider" style="margin: 0;"></li>
-                            <li>
-                                <a href="#" class="pointer datemp" style="display: flex; justify-content: space-between; padding: 15px 15px;">
-                                    <span style="display: flex;"> 
-                                        <i class="fa fa-cog" aria-hidden="true" style="font-size: 25px; margin: auto; margin-right: 12px; color: #ffc94f; filter: drop-shadow(0px 0px 2px #ffc94f);"></i>
-                                        <span style="padding: 5px 0px;">
-                                            Configuracion de cuenta
-                                        </span>
-                                    </span>
-                                    <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px; color: #bfbfbf; margin: auto 0px;"></i>
-                                </a>
-                            </li>
-                            <li role="separator" class="divider" style="margin: 0;"></li>
-                            <li>
-                                <a (click)="_usuarioService.logout()" class="pointer datemp" style="display: flex; justify-content: space-between; padding: 15px 15px;">
-                                    <span style="display: flex;"> 
-                                        <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px; margin: auto; margin-right: 12px; color: #ff4f4f; filter: drop-shadow(0px 0px 2px #ff4f4f);"></i>
-                                        <span style="padding: 5px 0px;">
-                                            Cerrar Sesion
-                                        </span>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
+            <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+            <div class="form-group mb-0">
+            <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+                <input class="form-control" placeholder="Search" type="text">
+              </div>
+            </div>
+            </form>
+            <!-- User -->
+            <ul class="navbar-nav align-items-center d-none d-md-flex">
+                <li class="nav-item" ngbDropdown placement="bottom-right">
+                  <a class="nav-link pr-0" role="button" ngbDropdownToggle>
+                    <div class="media align-items-center">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image" src="assets/img/login.png">
+                      </span>
+                      <div class="media-body ml-2 d-none d-lg-block">
+                        <span class="mb-0 text-sm  font-weight-bold">Administrador</span>
+                      </div>
                     </div>
-                </li> -->
-            </ul>
+                  </a>
+                  <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
+                    <div class=" dropdown-header noti-title">
+                      <h6 class="text-overflow m-0">Bienvenido!</h6>
+                    </div>
+                    <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+                      <i class="fas fa-user"></i>
+                      <span>Mi Perfil</span>
+                    </a>
+                    <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+                      <i class="fas fa-cog"></i>
+                      <span>Configuración</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-sign-out-alt"></i>
+                      <span>Cerrar Sesión</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
         </div>
     </nav>
 </header>
-<!-- ============================================================== -->
-<!-- End Topbar header -->
-<!-- ============================================================== -->
