@@ -23,11 +23,12 @@ export class CuentaDigitalInicioComponent implements OnInit {
   constante_idcliente = 30001;
   public listaTransferencias: Transferencia[] = [];
   public listaCuentabancaria: Cuentabancaria[] = [];
+  public objCuentaUsuario: CuentaUsuario =  new CuentaUsuario();
   public modalRef: NgbModalRef;
 
   ngOnInit(): void {
-    // this.listarTransferenciaPorCuenta(null);
-    this.listarCuentaBancariaPorCliente(null);
+    this.objCuentaUsuario.id = this.constante_idcliente;
+    this.listarCuentaBancariaPorCliente();
   }
   
   listarTransferenciaPorCuenta(event: any) {
@@ -40,13 +41,12 @@ export class CuentaDigitalInicioComponent implements OnInit {
     })
   }
 
-  listarCuentaBancariaPorCliente(event: any) {    
-    // const value = event.target.value;
+  listarCuentaBancariaPorCliente() {
     let obj = new Cuentabancaria();
-    obj.id_cliente = this.constante_idcliente;
+    obj.id_cliente = this.objCuentaUsuario;
     this.cuentabancariaService.listarCuentaBancariaPorCliente(obj).subscribe(resp => {
       this.listaCuentabancaria = resp;
-      console.log("a listaCuentabancaria", this.listaCuentabancaria)
+      console.log("listaCuentabancaria", this.listaCuentabancaria)
     })
   }
 

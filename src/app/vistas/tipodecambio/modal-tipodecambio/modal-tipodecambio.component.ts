@@ -112,7 +112,6 @@ export class ModalTipodecambioComponent implements OnInit {
 
   cancelar() {
     this.activeModal.close({ 'accion': 1 });
-    // $('a[data-toggle="tooltip"]').tooltip('hide');
   }
 
   listarMonedas(): void {

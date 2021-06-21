@@ -24,6 +24,7 @@ import { TipotransferenciaComponent } from './tipotransferencia/tipotransferenci
 import { ModalComponent } from './tipotransferencia/modal/modal.component';
 import { AbrirCuentaDigitalComponent } from './vistas/cliente/abrir-cuenta-digital/abrir-cuenta-digital.component';
 import { ModalCuentausuarioComponent } from './vistas/cuentausuario/modal-cuentausuario/modal-cuentausuario.component';
+import { ModalCuentadigitalComponent } from './vistas/cliente/abrir-cuenta-digital/modal-cuentadigital/modal-cuentadigital.component';
 import { LoginComponent } from './vistas/cliente/login/login.component';
 
 @NgModule({
@@ -47,6 +48,7 @@ import { LoginComponent } from './vistas/cliente/login/login.component';
     ModalComponent,
     AbrirCuentaDigitalComponent,
     ModalCuentausuarioComponent,
+    ModalCuentadigitalComponent,
     LoginComponent
   ],
   imports: [
