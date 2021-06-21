@@ -20,14 +20,14 @@ export class CuentaDigitalInicioComponent implements OnInit {
     private transferenciaService: TransferenciaService,
     private cuentabancariaService: CuentabancariaService,) { }
 
-  constante_idcliente = 30001;
   public listaTransferencias: Transferencia[] = [];
   public listaCuentabancaria: Cuentabancaria[] = [];
   public objCuentaUsuario: CuentaUsuario =  new CuentaUsuario();
   public modalRef: NgbModalRef;
 
   ngOnInit(): void {
-    this.objCuentaUsuario.id = this.constante_idcliente;
+    debugger
+    this.objCuentaUsuario = JSON.parse(localStorage.getItem('usuario'));
     this.listarCuentaBancariaPorCliente();
   }
   

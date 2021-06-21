@@ -12,10 +12,10 @@ import { TipotransferenciaComponent } from './tipotransferencia/tipotransferenci
 import { AbrirCuentaDigitalComponent } from './vistas/cliente/abrir-cuenta-digital/abrir-cuenta-digital.component';
 import { CuentaDigitalInicioComponent } from './vistas/cliente/cuenta-digital-inicio/cuenta-digital-inicio.component';
 import { LoginComponent } from './vistas/cliente/login/login.component';
+import { ModalComponent } from './tipotransferencia/modal/modal.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'laboratorio',pathMatch:'full'},
-  {path:'laboratorio',component:LaboratorioComponent},
+  {path:'',redirectTo:'abrirCuentaDigitalComponent',pathMatch:'full'},
   {path:'tipodecambio',component:TipodecambioComponent},
   {path:'cuentausuario',component:CuentausuarioComponent},
   {path:'promociones',component:PromocionesComponent},
@@ -26,6 +26,7 @@ const routes: Routes = [
   {path:'tipodetransferencia',component:TipotransferenciaComponent},	
   {path:'abrirCuentaDigitalComponent',component:AbrirCuentaDigitalComponent},
   {path:'cuentaDigitalInicioComponent',component:CuentaDigitalInicioComponent},
+  {path:'paginamantenimiento',component:ModalComponent},
   {path:'login',component:LoginComponent}
 
 ];

@@ -1,23 +1,34 @@
 <br>
 <br>
-
-<div class="container">
-    <div class="row">
-      <div class="col-6">
-        <h2>
-          ¿Te interesa solicitar un préstamo? Déjanos tus datos y te
-          contactaremos.
-        </h2>
-        <img src="assets/img/prestamo-gracias.png" />
-      </div>
-      <div class="col-6"></div>
-    </div>
-  </div>
-
 <form class="example-container" [formGroup]="form" #frm="ngForm" (ngSubmit)="null">
     <div class="modal-body">
         <div class="row">
             <div class="col-5">
+
+                <div class="tab-pane  show active p-20" id="transferencias" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div>
+                                    <table class="table">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">CUENTA DESTINO</th>
+                                                <th scope="col">MONTO</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>aaaaaaaaaaaaa</td>
+                                                <td>aaaaaaaaaaaaaaa</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="col-7">
@@ -126,7 +137,8 @@
                                 <h5> Tipo Moneda :</h5>
                                 <div class="controls">
                                     <select class="form-control" formControlName="moneda_origen">
-                                        <option [ngValue]="item" *ngFor="let item of listaMonedas">{{item.moneda}}
+                                        <option [ngValue]="item" *ngFor="let item of listaMonedas">
+                                            {{item.moneda}}
                                         </option>
                                     </select>
                                 </div>
@@ -150,23 +162,3 @@
         </div>
     </div>
 </form>
-
-
-<!-- <div class="row">
-    <div class="col-2">
-        <div class="form-group">
-            <h5> Sexo</h5>
-            <div class="controls">
-                <input type="text" class="form-control" formControlName="fecha">
-            </div>
-        </div>
-    </div>
-    <div class="col-5">
-        <div class="form-group">
-            <h5> Nombre :</h5>
-            <div class="controls">
-                <input type="text" class="form-control" formControlName="fecha">
-            </div>
-        </div>
-    </div>
-</div> -->

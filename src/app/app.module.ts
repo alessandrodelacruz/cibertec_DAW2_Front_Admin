@@ -27,6 +27,8 @@ import { ModalCuentadigitalComponent } from './vistas/cliente/abrir-cuenta-digit
 import { LoginComponent } from './vistas/cliente/login/login.component';
 import { InicioComponent } from './vistas/inicio/inicio.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
