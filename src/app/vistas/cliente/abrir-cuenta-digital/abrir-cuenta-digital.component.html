@@ -35,8 +35,8 @@
 
             </div>
             <div class="col-7">
-                <div *ngIf="opcion1">
-                    <h6 style="font-size: 35px;font-weight: bold;"> Abre tu Cuenta Digital BCB</h6>
+                <div *ngIf="ventana == 1">
+                    <h6 style="font-size: 35px;font-weight: bold;">Abre tu Cuenta Digital BCB</h6>
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
@@ -58,7 +58,8 @@
                         </div>
                     </div>
                 </div>
-                <div *ngIf="opcion2">
+                <div *ngIf="ventana == 2">
+                    <h6 style="font-size: 35px;font-weight: bold;">Completar datos</h6>
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
@@ -110,14 +111,6 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <h5> Tipo de Cuenta :</h5>
-                                <div class="controls">
-                                    <input type="text" class="form-control" formControlName="tipo_de_cuenta">
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-3">
                             <div class="form-group">
                                 <h5> Sexo :</h5>
@@ -127,26 +120,33 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
+                </div>
+                <div *ngIf="ventana == 3">
+                    <h6 style="font-size: 35px;font-weight: bold;">Clave de tu Tarjeta</h6>
+                    <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Tipo de Cuenta :</h5>
+                                <h5> Clave :</h5>
                                 <div class="controls">
-                                    <input type="text" class="form-control" formControlName="tipo_de_cuenta">
+                                    <input type="text" class="form-control" formControlName="clave">
                                 </div>
                             </div>
                         </div>
-                    </div> -->
-                    <!-- <div class="row">
+                    </div>
+                    <h6 style="font-size: 35px;font-weight: bold;">Tipo de moneda de tu Cuenta</h6>
+                    <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Sexo :</h5>
+                                <h5> Tipo Moneda :</h5>
                                 <div class="controls">
-                                    <input type="text" class="form-control" formControlName="sexo">
+                                    <select class="form-control" formControlName="moneda_origen">
+                                        <option [ngValue]="item" *ngFor="let item of listaMonedas">{{item.moneda}}
+                                        </option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@
         </div>
         <div class="col-4">
             <div class="modal-footer">
-                <button *ngIf="opcion2" type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="retroceder()">
+                <button *ngIf="ventana == 2 || ventana == 3 " type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="retroceder()">
                     <a>Retroceder</a> </button>
                 <button type="submit" (click)="continuar()" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm" data-dismiss="modal">
                     <a>{{descripcion_boton}}</a></button>

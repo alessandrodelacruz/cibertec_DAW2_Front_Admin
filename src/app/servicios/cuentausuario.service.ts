@@ -26,9 +26,10 @@ export class CuentausuarioService {
     return this.http.post<any>(url, obj);
   }
 
-  registrarCuentaUsuarioC(obj: any) {
+  registrarCuentaUsuarioC(objcu:any) {
+    
     let url = this.urlback + "cuentaUsuario/registrarC";
-    return this.http.post<any>(url, obj);
+    return this.http.post<any>(url, objcu);
   }
 
   actualizarCuentaUsuario(obj: any) {
@@ -45,4 +46,10 @@ export class CuentausuarioService {
     let url = this.urlback + "cuentaUsuario/buscar";
     return this.http.post<any>(url, obj);
   }
+
+  verificarUsuario(obj: any) {
+    let url = this.urlback + "cuentaUsuario/listarPorCuenta";
+    return this.http.post<any>(url, obj);
+  }
+
 }

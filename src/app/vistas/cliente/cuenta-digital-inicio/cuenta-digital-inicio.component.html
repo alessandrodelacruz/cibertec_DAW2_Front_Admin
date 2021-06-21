@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label style="font-size: 22px;">{{obj.saldo}}</label><br>
+                                                <label style="font-size: 22px;">{{obj.saldo | currency: obj.id_moneda?.simbolo}}</label><br>
                                                 <label style="font-size: 22px;">Saldo Disponible</label>
                                             </div>
                                         </div>

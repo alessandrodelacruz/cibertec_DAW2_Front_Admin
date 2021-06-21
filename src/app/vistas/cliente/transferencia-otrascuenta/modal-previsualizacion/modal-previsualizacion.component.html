@@ -19,7 +19,7 @@
             <div class="form-group">
                 <h5 style="font-size: 14px; margin-bottom: 0px;"> Monto</h5>
                 <label style="font-size: 26px; font-weight: bold; color: red;">{{objTransferencia.monto | currency :
-                    simbolo }}</label>
+                    objTransferencia.idmoneda.simbolo }}</label>
             </div>
         </div>
     </div>
@@ -27,7 +27,8 @@
         <div class="col-12">
             <div class="form-group">
                 <h5 style="font-size: 14px; margin-bottom: 0px;"> Cuenta de destino</h5>
-                <label style="font-size: 18px; font-weight: bold; margin-bottom: 0px;">{{objTransferencia.idcuentadestino.id_cliente}}</label><br>
+                <label style="font-size: 18px; font-weight: bold; margin-bottom: 0px;">{{objTransferencia.idcuentadestino.id_cliente.nombre}}
+                    {{objTransferencia.idcuentadestino.id_cliente.apellido}}</label><br>
                 <label style="font-size: 18px;">{{objTransferencia.idcuentadestino.numero_cuenta}}</label>
             </div>
         </div>

@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h5> DETALLE (COPIAR Y GUARDAR DATOS) </h5>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <h5 style="font-size: 14px; margin-bottom: 0px;"> Numero de tarjeta</h5>
+                <label style="font-size: 25px;">{{cuentaUsuario.numerotarjeta}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <h5 style="font-size: 14px; margin-bottom: 0px;"> Clave</h5>
+                <label style="font-size: 25px;">{{cuentaUsuario.clave}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <h5 style="font-size: 14px; margin-bottom: 0px;"> Cuenta Bancaria</h5>
+                <label style="font-size: 25px;">{{cuentabancaria.numero_cuenta}}</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h5 style="font-size: 14px; margin-bottom: 0px;"> Tipo de moneda</h5>
+                <label style="font-size: 25px;">{{cuentabancaria.id_moneda.moneda}}</label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success waves-effect waves-light btn-sm" routerLink="/tipodecambio">
+        <a>Confirmar</a></button>
+</div>
