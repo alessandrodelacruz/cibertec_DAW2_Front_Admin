@@ -45,4 +45,10 @@ export class CuentausuarioService {
     let url = this.urlback + "cuentaUsuario/buscar";
     return this.http.post<any>(url, obj);
   }
+
+  verificarUsuario(obj: any) {
+    let url = this.urlback + "cuentaUsuario/listarPorCuenta";
+    return this.http.post<any>(url, obj);
+  }
+
 }

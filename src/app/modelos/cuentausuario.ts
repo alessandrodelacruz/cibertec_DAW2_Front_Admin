@@ -11,6 +11,8 @@ export class CuentaUsuario {
   nombre?: string;
   apellido?: string;
   documento?: string;
+  numerotarjeta?: string;
+  clave?: string;
 
 
 }
