@@ -25,6 +25,7 @@ import { AbrirCuentaDigitalComponent } from './vistas/cliente/abrir-cuenta-digit
 import { ModalCuentausuarioComponent } from './vistas/cuentausuario/modal-cuentausuario/modal-cuentausuario.component';
 import { ModalCuentadigitalComponent } from './vistas/cliente/abrir-cuenta-digital/modal-cuentadigital/modal-cuentadigital.component';
 import { LoginComponent } from './vistas/cliente/login/login.component';
+import { InicioComponent } from './vistas/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { LoginComponent } from './vistas/cliente/login/login.component';
     AbrirCuentaDigitalComponent,
     ModalCuentausuarioComponent,
     ModalCuentadigitalComponent,
-    LoginComponent
+    LoginComponent,
+    InicioComponent
   ],
   imports: [
     AppRoutingModule,
