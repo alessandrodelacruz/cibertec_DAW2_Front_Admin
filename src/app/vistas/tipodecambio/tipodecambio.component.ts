@@ -18,8 +18,6 @@ export class TipodecambioComponent implements OnInit {
 
   modalRef: NgbModalRef;
 
-  // public mr!: NgbModalRef;
-
   public lista: Tipodecambio[] = [];
   public display: string = 'none';
   public opcmoneda: Moneda;
@@ -28,7 +26,6 @@ export class TipodecambioComponent implements OnInit {
 
 
   public tipodecambio: Tipodecambio = new Tipodecambio();
-  // form: FormGroup = new FormGroup({});
   form: FormGroup = new FormGroup({});
   public listaMonedas: Moneda[] = [];
   public IU: any;
@@ -41,7 +38,6 @@ export class TipodecambioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.iniciarModal();
     this.listarMonedas();
     this.listar();
   }
@@ -53,7 +49,6 @@ export class TipodecambioComponent implements OnInit {
   }
 
   listarFiltro(event: any) {    
-    // const value = event.target.value;
     let obj = new Tipodecambio();
     obj.moneda_origen = event;    
     this.tipodecambioService.listarTipodecambioPorMonedaOrigen(obj).subscribe(resp => {

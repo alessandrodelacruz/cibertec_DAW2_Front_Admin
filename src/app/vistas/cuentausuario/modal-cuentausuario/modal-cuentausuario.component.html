@@ -1,16 +1,90 @@
-<!-- <form class="example-container" [formGroup]="form" #frmUsuario="ngForm" (ngSubmit)="operar()">
-    <h1 mat-dialog-title>{{IU}} USUARIO</h1>
-    <input type="text" class="form-control" formControlName="id">
-    <input type="text" class="form-control" formControlName="email">
-    <input type="text" class="form-control" formControlName="tipo_de_cuenta">
-    <input type="date" class="form-control" formControlName="fecha_nac">
-    <input type="text" class="form-control" formControlName="sexo">
-    <input type="text" class="form-control" formControlName="direccion">
-    <input type="text" class="form-control" formControlName="estado">
-    <input type="text" class="form-control" formControlName="id_distrito">
+<div class="modal-header">
+    <h5 mat-dialog-title>{{IU}} CUENTA USUARIO</h5>
+</div>
 
-    <div mat-dialog-actions style="float: right;">
-        <button mat-raised-button color="accent" type="button" (click)="cancelar()">CANCELAR</button>
-        <button mat-raised-button color="primary" type="submit" [disabled]="frmUsuario.invalid">ACEPTAR</button>
+<form class="example-container" [formGroup]="form" #frm="ngForm" (ngSubmit)="operar()">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5>Código:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="id">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Email:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="email">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5>Tipo de Cuenta:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="tipo_de_cuenta">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Fecha de Nacimiento:</h5>
+                    <div class="controls">
+                        <input type="date" class="form-control" formControlName="fecha_nac">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5>Sexo:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="sexo">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Dirección:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="direccion">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5>Estado:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="estado">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Distrito:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="id_distrito">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</form> -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="cancelar()">
+            <a>Cancelar</a> </button>
+        <button type="submit" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm"
+            data-dismiss="modal">
+            <a>{{boton_primario}}</a></button>
+    </div>
+</form>

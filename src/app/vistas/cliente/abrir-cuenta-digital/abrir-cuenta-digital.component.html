@@ -11,16 +11,36 @@
                             <div class="form-group">
                                 <div>
                                     <table class="table">
-                                        <thead class="thead-dark">
+                                        <thead>
                                             <tr>
-                                                <th scope="col">CUENTA DESTINO</th>
-                                                <th scope="col">MONTO</th>
+                                                <th scope="col" style="text-align: center;color: black;font-size: 25px;">CONOCE LOS BENEFICIOS EN BCB</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody style="display: inline-flex; margin: 10px;">
                                             <tr>
-                                                <td>aaaaaaaaaaaaa</td>
-                                                <td>aaaaaaaaaaaaaaa</td>
+                                                <img src="../assets/img/sin-costo-mante.png">
+                                            </tr>
+                                            <tr>
+                                                <b><span style="display: inline-block;font-style: oblique;">Sin costo de Mantenimiento,ni monto 
+                                                    mínimo de apertura</span></b>
+                                            </tr>
+                                        </tbody>
+                                        <tbody style="display: inline-flex;margin: 15px;">
+                                            <tr>
+                                                <img src="../assets/img/operaciones-sin-costo-cuenta.png" style="margin-right: 18px;">
+                                            </tr>
+                                            <tr>
+                                                <b><span style="display: inline-block;font-style: oblique;">Operaciones sin costo entre Cuentas BCB
+                                                vía Banca por Internet y Banca Móvil BCB</span></b>
+                                            </tr>
+                                        </tbody>
+                                        <tbody style="display: inline-flex;margin: 18px;">
+                                            <tr>
+                                                <img src="../assets/img/operaciones-sin-costo.png">
+                                            </tr>
+                                            <tr>
+                                                <b><span style="display: inline-block;font-style: oblique;">Operaciones sin costo entre Cuentas BCB
+                                                en Cajeros BCB a nivel nacional</span></b>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -32,12 +52,14 @@
 
             </div>
             <div class="col-7">
+                <br>
+                <br>
                 <div *ngIf="ventana == 1">
-                    <h6 style="font-size: 35px;font-weight: bold;">Abre tu Cuenta Digital BCB</h6>
+                    <h6 style="font-size: 35px;font-weight: bold;color: black;">Abre tu Cuenta Digital BCB</h6>
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Documento de Identidad :</h5>
+                                <h5 style="color: black;"> Documento de Identidad</h5>
                                 <div class="controls">
                                     <input type="number" class="form-control" formControlName="documento">
                                 </div>
@@ -47,7 +69,7 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Email :</h5>
+                                <h5 style="color: black;"> Email</h5>
                                 <div class="controls">
                                     <input type="text" class="form-control" formControlName="email" [(ngModel)]="correo">
                                 </div>
@@ -56,11 +78,11 @@
                     </div>
                 </div>
                 <div *ngIf="ventana == 2">
-                    <h6 style="font-size: 35px;font-weight: bold;">Completar datos</h6>
+                    <h6 style="font-size: 35px;font-weight: bold;color: black;">Datos Personales</h6>
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Email :</h5>
+                                <h5 style="color: black;">Email</h5>
                                 <div class="controls">
                                     <input type="text" class="form-control" formControlName="email2" [(ngModel)]="correo" readonly>
                                 </div>
@@ -70,7 +92,7 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Nombre :</h5>
+                                <h5 style="color: black;">Nombres</h5>
                                 <div class="controls">
                                     <input type="text" class="form-control" formControlName="nombre">
                                 </div>
@@ -80,7 +102,7 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Apellido :</h5>
+                                <h5 style="color: black;">Apellidos</h5>
                                 <div class="controls">
                                     <input type="text" class="form-control" formControlName="apellido">
                                 </div>
@@ -90,7 +112,7 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Fecha de Nacimiento :</h5>
+                                <h5 style="color: black;">Fecha de Nacimiento</h5>
                                 <div class="controls">
                                     <input type="date" class="form-control" formControlName="fecha_nac">
                                 </div>
@@ -100,7 +122,7 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Direccion :</h5>
+                                <h5 style="color: black;">Dirección</h5>
                                 <div class="controls">
                                     <input type="text" class="form-control" formControlName="direccion">
                                 </div>
@@ -110,7 +132,7 @@
                     <div class="row">
                         <div class="col-3">
                             <div class="form-group">
-                                <h5> Sexo :</h5>
+                                <h5 style="color: black;">Sexo</h5>
                                 <div class="controls">
                                     <input type="text" class="form-control" formControlName="sexo">
                                 </div>
@@ -119,22 +141,22 @@
                     </div>
                 </div>
                 <div *ngIf="ventana == 3">
-                    <h6 style="font-size: 35px;font-weight: bold;">Clave de tu Tarjeta</h6>
+                    <h6 style="font-size: 35px;font-weight: bold;color: black;">Clave de tu Tarjeta</h6>
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Clave :</h5>
+                                <h5 style="color: black;">Clave(Mínimo de 6 digitos)</h5>
                                 <div class="controls">
-                                    <input type="text" class="form-control" formControlName="clave">
+                                    <input type="password" class="form-control" formControlName="clave">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <h6 style="font-size: 35px;font-weight: bold;">Tipo de moneda de tu Cuenta</h6>
+                    <h6 style="font-size: 35px;font-weight: bold;color: black;">Tipo de moneda de tu Cuenta</h6>
                     <div class="row">
                         <div class="col-7">
                             <div class="form-group">
-                                <h5> Tipo Moneda :</h5>
+                                <h5 style="color: black;">Tipo Moneda</h5>
                                 <div class="controls">
                                     <select class="form-control" formControlName="moneda_origen">
                                         <option [ngValue]="item" *ngFor="let item of listaMonedas">
@@ -154,8 +176,8 @@
         </div>
         <div class="col-4">
             <div class="modal-footer">
-                <button *ngIf="ventana == 2 || ventana == 3 " type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="retroceder()">
-                    <a>Retroceder</a> </button>
+                <button *ngIf="ventana == 2 || ventana == 3 " type="button" style="width: 80px;" class="btn btn-danger waves-effect waves-light btn-sm" (click)="retroceder()">
+                    <a>Atrás</a> </button>
                 <button type="submit" (click)="continuar()" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm" data-dismiss="modal">
                     <a>{{descripcion_boton}}</a></button>
             </div>

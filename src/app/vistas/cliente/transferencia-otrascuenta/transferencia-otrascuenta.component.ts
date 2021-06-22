@@ -71,7 +71,7 @@ export class TransferenciaOtrascuentaComponent implements OnInit {
     obj.numero_cuenta = this.form.value['cuentadestino'];;
     this.cuentaBancariaService.retornaCuentaBancariaPorNumdeCuenta(obj).subscribe(resp => {
       if (resp != null) {
-        debugger
+        
         this.objCuentabancaria = resp;
         let obj = new Transferencia();
         obj.id = 0;
@@ -83,7 +83,7 @@ export class TransferenciaOtrascuentaComponent implements OnInit {
         this.modalRef = this.modalService.open(ModalPrevisualizacionComponent, { size: 'md' });
         this.modalRef.componentInstance.obj = obj;
         this.modalRef.result.then((result) => {
-          debugger
+          
           if(result.accion == 0){ 
 
           }else{

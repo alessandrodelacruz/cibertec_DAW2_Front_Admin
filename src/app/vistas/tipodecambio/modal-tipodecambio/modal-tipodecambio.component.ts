@@ -18,7 +18,7 @@ export class ModalTipodecambioComponent implements OnInit {
   constructor(
     public activeModal: NgbActiveModal,
     private tipodecambioService: TipodecambioService,
-    private monedaService: MonedaService,) { }
+    private monedaService: MonedaService) { }
 
   @Input() obj;
   @Input() accionmodal;

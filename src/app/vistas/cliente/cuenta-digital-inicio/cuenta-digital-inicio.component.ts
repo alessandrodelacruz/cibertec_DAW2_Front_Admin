@@ -26,7 +26,7 @@ export class CuentaDigitalInicioComponent implements OnInit {
   public modalRef: NgbModalRef;
 
   ngOnInit(): void {
-    debugger
+    
     this.objCuentaUsuario = JSON.parse(localStorage.getItem('usuario'));
     this.listarCuentaBancariaPorCliente();
   }

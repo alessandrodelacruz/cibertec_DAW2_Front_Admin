@@ -15,7 +15,7 @@
     <div class="col-6" style="padding: 0;">
         <div class="d-flex">
             <div>
-                <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModal(null,1)">Nuevo Usuario</button>
+                <button mat-raised-button class="btn btn-success" type="button" (click)="openModal(null,1)">Nuevo Usuario</button>
             </div>
         </div>
     </div>
@@ -49,8 +49,8 @@
             <td>{{obj.estado}}</td>
             <td>{{obj.id_distrito}}</td>
             <td>
-                <button mat-raised-button color="accent" type="button" (click)="openModal(obj, 2)">Editar</button>
-                <button mat-raised-button color="accent" type="button" (click)="eliminar(obj)">Eliminar</button>
+                <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModal(obj, 2)">Editar</button>
+                <button mat-raised-button class="btn btn-danger btn-icon btn-sm" type="button" (click)="eliminar(obj)">Eliminar</button>
             </td>
         </tr>
     </tbody>

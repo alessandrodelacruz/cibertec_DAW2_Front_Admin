@@ -13,10 +13,9 @@
 
     <div *ngIf="visibletabla">
         <div class="d-flex">
-            <div class="col-3" style="padding: 0;">
+            <div class="col-6" style="padding: 0;">
                 <div>
-                    <h5> </h5>
-                    <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModals(null, 1)">Nuevo Tipo</button>
+                    <button mat-raised-button class="btn btn-success" type="button" (click)="openModals(null, 1)">Nuevo Tipo</button>
                 </div>
             </div>
             <div class="col-2" style="display: inline-block;">
@@ -52,8 +51,8 @@
                         <td>{{obj.tipo_cambio}}</td>
                         <td>{{obj.fecha}}</td>
                         <td>
-                            <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModals(obj, 2)">EDITAR</button>
-                            <button mat-raised-button class="btn btn-success waves-effect waves-light btn-sm" type="button" (click)="eliminar(obj)">ELIMINAR</button>
+                            <button mat-raised-button class="btn btn-info waves-effect waves-light btn-sm" type="button" (click)="openModals(obj, 2)" style="margin: 5px;">Editar</button>
+                            <button mat-raised-button class="btn btn-danger waves-effect waves-light btn-sm" type="button" (click)="eliminar(obj)">Eliminar</button>
                         </td>
                     </tr>
                 </tbody>

@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
   public usu_logueado: Boolean = false;
 
   ngOnInit(): void {
-    debugger
+    
     this.verificar();
 
   }

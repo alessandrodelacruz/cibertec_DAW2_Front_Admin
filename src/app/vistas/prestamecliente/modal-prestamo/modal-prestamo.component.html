@@ -1,0 +1,67 @@
+<div class="modal-header">
+    <h5 mat-dialog-title>{{IU}} PRÉSTAMO PARA EL CLIENTE</h5>
+</div>
+
+<form class="example-container" [formGroup]="form" #frm="ngForm" (ngSubmit)="operar()">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5>Código:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="id">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Descripción:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="descripcion">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Plazo:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="plazo">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Fecha Inicio:</h5>
+                    <div class="controls">
+                        <input type="date" class="form-control" formControlName="inicio">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5>Fecha Fin:</h5>
+                    <div class="controls">
+                        <input type="date" class="form-control" formControlName="fin">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h5> Solicitud:</h5>
+                    <div class="controls">
+                        <input type="text" class="form-control" formControlName="solicitud">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm" (click)="cancelar()"><a>Cancelar</a></button>
+        <button type="submit" [disabled]="frm.invalid" class="btn btn-primary waves-effect waves-light btn-sm" data-dismiss="modal"><a>{{boton_primario}}</a></button>
+    </div>
+</form>

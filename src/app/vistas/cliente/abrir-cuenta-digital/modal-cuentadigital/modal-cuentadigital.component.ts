@@ -15,7 +15,7 @@ export class ModalCuentadigitalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    debugger
+    
     this.cuentaUsuario = this.objrespuesta.defaultObj.cuentaUsuario;
     this.cuentabancaria = this.objrespuesta.defaultObj.cuentaBancaria;
   }

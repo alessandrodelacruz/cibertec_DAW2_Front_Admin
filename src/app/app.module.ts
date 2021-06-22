@@ -26,6 +26,7 @@ import { ModalCuentausuarioComponent } from './vistas/cuentausuario/modal-cuenta
 import { ModalCuentadigitalComponent } from './vistas/cliente/abrir-cuenta-digital/modal-cuentadigital/modal-cuentadigital.component';
 import { LoginComponent } from './vistas/cliente/login/login.component';
 import { InicioComponent } from './vistas/inicio/inicio.component';
+import { ModalPrestamoComponent } from './vistas/prestamecliente/modal-prestamo/modal-prestamo.component';
 
 
 
@@ -52,7 +53,8 @@ import { InicioComponent } from './vistas/inicio/inicio.component';
     ModalCuentausuarioComponent,
     ModalCuentadigitalComponent,
     LoginComponent,
-    InicioComponent
+    InicioComponent,
+    ModalPrestamoComponent
   ],
   imports: [
     AppRoutingModule,

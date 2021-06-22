@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PrestamoService } from '../../servicios/prestamo.service';
 import { Prestamocliente } from '../../modelos/prestamocliente';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalPrestamoComponent } from './modal-prestamo/modal-prestamo.component';
 
 @Component({
   selector: 'app-prestamecliente',
@@ -10,6 +12,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class PrestameclienteComponent implements OnInit {
 
+  modalRef: NgbModalRef;
+
   lista: Prestamocliente[] = [];
 
   public prestamocliente: Prestamocliente = new Prestamocliente();
@@ -17,14 +21,12 @@ export class PrestameclienteComponent implements OnInit {
   public IU: any;
   public boton_primario: any;
 
-  constructor(
+  constructor(private modalService: NgbModal,
     private prestamoClienteService: PrestamoService) { }
 
   ngOnInit(): void {
     this.listar();
 
-    
-    this.iniciarModal();
   }
 
   listar(): void {
@@ -42,67 +44,14 @@ export class PrestameclienteComponent implements OnInit {
     })
   }
 
-
-
-
-  
-  openModal(obj: any, acc: number) {
-    if (acc == 1) {
-      this.prestamocliente = new Prestamocliente();
-    } else {
-      this.prestamocliente = new Prestamocliente();
-      this.prestamocliente = obj;
-    }
-    this.iniciarModal();
+  openModals(obj: any, acc: number) {
+    this.modalRef = this.modalService.open(ModalPrestamoComponent, { size: 'lg' });
+    this.modalRef.componentInstance.obj = obj;
+    this.modalRef.componentInstance.accionmodal = acc;
+    this.modalRef.result.then((result) => {
+      this.listar();
+    }, (reason) => {
+      
+    });
   }
-
-  iniciarModal() {
-    if (this.prestamocliente.id != null) {
-      this.IU = "ACTUALIZAR";
-      this.boton_primario = "Actualizar";
-      this.form = new FormGroup({
-        'id': new FormControl(this.prestamocliente.id),
-        'descripcion': new FormControl(this.prestamocliente.descripcion),
-        'plazo': new FormControl(this.prestamocliente.plazo),
-        'inicio': new FormControl(this.prestamocliente.inicio),
-        'fin': new FormControl(this.prestamocliente.fin),
-        'solicitud': new FormControl(this.prestamocliente.solicitud),
-      });
-    } else {
-      this.IU = "NUEVO";
-      this.boton_primario = "Registrar";
-      this.form = new FormGroup({
-        'id': new FormControl(0),
-        'descripcion': new FormControl(''),
-        'plazo': new FormControl(''),
-        'inicio': new FormControl(''),
-        'fin': new FormControl(''),
-        'solicitud': new FormControl(''),
-      });
-    }
-  }
-
-  operar(): void {
-    let obj = new Prestamocliente();
-    obj.id = this.prestamocliente.id;
-    obj.descripcion = this.form.value['descripcion'];
-    obj.plazo = this.form.value['plazo'];
-    obj.inicio = this.form.value['inicio'];
-    obj.fin = this.form.value['fin'];
-    obj.solicitud = this.form.value['solicitud'];
-    if (obj.id == undefined) {
-      this.prestamoClienteService.registrarPrestamoCliente(obj).subscribe(resp => {
-        this.listar();
-      })
-    } else {
-      this.prestamoClienteService.actualizarPrestamoCliente(obj).subscribe(resp => {
-        this.listar();
-      })
-    }
-  }
-
-  cancelar() {
-    // this.dialogRef.close();
-  }
-
 }
